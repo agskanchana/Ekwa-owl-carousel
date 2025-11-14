@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "bizgrow-blocks/carousel",
+  "version": "0.1.0",
+  "title": "Carousel",
+  "category": "bizgrow",
+  "description": "Create a owl carousel with inner blocks",
+  "attributes": {
+    "blockID": {
+      "type": "string"
+    },
+    "loop": {
+      "type": "boolean",
+      "default": false
+    },
+    "itemPerDesktop": {
+      "type": "number",
+      "default": 1
+    },
+    "itemPerTab": {
+      "type": "number",
+      "default": 1
+    },
+    "itemPerMobile": {
+      "type": "number",
+      "default": 1
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "dots": {
+      "type": "boolean",
+      "default": true
+    },
+    "nav": {
+      "type": "boolean",
+      "default": false
+    },
+    "margin": {
+      "type": "number",
+      "default": 0
+    },
+    "navText": {
+      "type": "string",
+      "default": "[&#x27;next&#x27;,&#x27;prev&#x27;]"
+    },
+    "nextBtnSvg": {
+      "type": "string",
+      "default": "<svg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'><path d='M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z'/></svg>"
+    },
+    "prevBtnSvg": {
+      "type": "string",
+      "default": "<svg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 320 512'><path d='M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z'/></svg>"
+    },
+    "numSlides": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "carousel",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

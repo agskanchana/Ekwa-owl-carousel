@@ -1,0 +1,31 @@
+.owl-bzgrw-hide{
+    visibility: hidden;
+}
+.bizg-owl-prev,
+.bizg-owl-next{
+    cursor: pointer;
+}
+.owl-nav{
+    display: none;
+}
+.bizgrow-carousel-wrapper{
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+}
+.bizg-owl-prev, .bizg-owl-next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.bizg-owl-prev{
+    left: 0;
+}
+.bizg-owl-next{
+    right: 0;
+}
+.bizg-owl-prev.disabled,
+.bizg-owl-next.disabled{
+    opacity: 0.3;
+    cursor: default;
+}
