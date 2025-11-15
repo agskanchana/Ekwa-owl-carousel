@@ -3,11 +3,11 @@ import Edit from './edit';
 import save from './save';
 
 
-registerBlockType("bizgrow-blocks/carousel-item", {
+registerBlockType("ekwa-blocks/carousel-item", {
     title: ("Carousel Item", "carousel-item"),
     description: ("Add an item to carousel", "carousel-item"),
     icon: "slides",
-    parent: ["bizgrow-blocks/carousel"],
+    parent: ["ekwa-blocks/carousel"],
     supports: {
         reusable: false,
         html: false
@@ -18,9 +18,9 @@ registerBlockType("bizgrow-blocks/carousel-item", {
             source: "html",
             selector: "h4"
         }
-        
+
     },
-   
+
     edit: Edit,
     save: save
 })

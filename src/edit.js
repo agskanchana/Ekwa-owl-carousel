@@ -6,24 +6,24 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	setAttributes({blockID: clientId})
 	const blockProps = useBlockProps();
 	const CAROUSEL_ITEMS_TEMPLATE = [
-		[ 'bizgrow-blocks/carousel-item', {} ],
-		[ 'bizgrow-blocks/carousel-item', {} ]
+		[ 'ekwa-blocks/carousel-item', {} ],
+		[ 'ekwa-blocks/carousel-item', {} ]
 	];
-	const carouselID = 'bizg-' + blockID + '-carousel';
+	const carouselID = 'ekwa-' + blockID + '-carousel';
 	const carouselClass = 'owl-carousel owl-theme ' + carouselID;
 
 
 
-	
+
 
 
 
 	return (
 		<>
 		<InspectorControls>
-			
+
 			<Panel>
-				<PanelBody 
+				<PanelBody
 				title='Loop'
 				initialOpen={ false }
 				>
@@ -39,11 +39,11 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						 setAttributes({loop: state})
 					} }
        			 />
-				 
+
 				</PanelBody>
 			</Panel>
 			<Panel>
-				<PanelBody 
+				<PanelBody
 				title='Sliders Per Device'
 				initialOpen={ false }
 				>
@@ -71,7 +71,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				</PanelBody>
 			</Panel>
 			<Panel>
-				<PanelBody 
+				<PanelBody
 				title='Auto Play'
 				initialOpen={ false }
 				>
@@ -90,7 +90,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				</PanelBody>
 			</Panel>
 			<Panel>
-				<PanelBody 
+				<PanelBody
 				title='Dots'
 				initialOpen={ false }
 				>
@@ -109,7 +109,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				</PanelBody>
 			</Panel>
 			<Panel>
-				<PanelBody 
+				<PanelBody
 				title='Navigation'
 				initialOpen={ false }
 				>
@@ -128,10 +128,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				</PanelBody>
 			</Panel>
 			<Panel>
-				<PanelBody 
+				<PanelBody
 				title='Margin between items'
 				initialOpen={ false }
-				> 
+				>
 				<RangeControl
 					label="Margin"
 					value={ margin }
@@ -159,12 +159,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					value={ nextBtnSvg }
 					onChange={ ( value ) => setAttributes( {nextBtnSvg: value} ) }
         		/>
-			 	
-				 
+
+
 				</PanelBody>
 			</Panel>
 		</InspectorControls>
-		
+
 		<script>{`
          owlSettings.push({
 			"nav_id"			:	"${blockID}",
@@ -176,27 +176,27 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
             "autoplay"          :   ${autoplay},
             "dots"              :   ${dots},
             "navigation"        :   ${nav},
-            "margin"            :   ${margin},   
+            "margin"            :   ${margin},
          });
-    
+
         `}
 	</script>
-	<div className=' bizgrow-carousel-wrapper'>
+	<div className=' ekwa-carousel-wrapper'>
 		<div  { ...blockProps }>
-		<InnerBlocks  
-			allowedBlocks={['bizgrow-blocks/carousel-item']} 
+		<InnerBlocks
+			allowedBlocks={['ekwa-blocks/carousel-item']}
 			template={ CAROUSEL_ITEMS_TEMPLATE }
 			renderAppender={ InnerBlocks.ButtonBlockAppender }
 		/>
 		</div>
-		
-		
+
+
 		{prevBtnSvg
-        ? <span className={`bizgrow-${blockID}-prev bizg-owl-prev`} dangerouslySetInnerHTML={{ __html: prevBtnSvg }}></span>
+        ? <span className={`ekwa-${blockID}-prev ekwa-owl-prev`} dangerouslySetInnerHTML={{ __html: prevBtnSvg }}></span>
         : null
       	}
-		{nextBtnSvg 
-		 ? <span className={`bizgrow-${blockID}-next bizg-owl-next`} dangerouslySetInnerHTML={{ __html: nextBtnSvg }}></span>
+		{nextBtnSvg
+		 ? <span className={`ekwa-${blockID}-next ekwa-owl-next`} dangerouslySetInnerHTML={{ __html: nextBtnSvg }}></span>
 		 : null
 		}
 	</div>

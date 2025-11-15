@@ -1,1 +1,0 @@
-{"version":3,"file":"index.css","mappings":";;;AAAA;EACI;EACA;EACA;EACA;AACJ,C","sources":["webpack://carousel/./src/editor.scss"],"sourcesContent":[".bizgrow-carousel-item{\r\n    padding: 1em;\r\n    background-color: beige;\r\n    margin: 0.5em;\r\n    border: 1px solid grey;\r\n}"],"names":[],"sourceRoot":""}

@@ -1,10 +1,10 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "bizgrow-blocks/carousel",
+	"name": "ekwa-blocks/carousel",
 	"version": "0.1.0",
 	"title": "Carousel",
-	"category": "bizgrow",
+	"category": "widgets",
 	"description": "Create a owl carousel with inner blocks",
 	"attributes": {
 		"blockID": {
@@ -62,8 +62,9 @@
 	"supports": {
 		"html": false
 	},
-	"textdomain": "carousel",
+	"textdomain": "ekwa-owl-carousel",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
 }
