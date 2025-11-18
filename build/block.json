@@ -57,6 +57,14 @@
     "numSlides": {
       "type": "number",
       "default": 1
+    },
+    "enableCustomJS": {
+      "type": "boolean",
+      "default": false
+    },
+    "customJSCode": {
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {

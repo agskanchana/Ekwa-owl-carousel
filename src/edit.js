@@ -2,7 +2,7 @@
 import { Panel, PanelBody,  RangeControl, ToggleControl, TextareaControl, ToolbarButton   } from '@wordpress/components';
 import { useBlockProps, InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 export default function Edit( { attributes, setAttributes, clientId } ) {
-	const { numSlides, blockID, nextBtnSvg, prevBtnSvg, loop, itemPerDesktop, itemPerTab,  itemPerMobile, autoplay, dots, nav, margin} = attributes;
+	const { numSlides, blockID, nextBtnSvg, prevBtnSvg, loop, itemPerDesktop, itemPerTab,  itemPerMobile, autoplay, dots, nav, margin, enableCustomJS, customJSCode} = attributes;
 	setAttributes({blockID: clientId})
 	const blockProps = useBlockProps();
 	const CAROUSEL_ITEMS_TEMPLATE = [
@@ -161,6 +161,47 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
         		/>
 
 
+				</PanelBody>
+			</Panel>
+			<Panel>
+				<PanelBody
+				 title='Custom JavaScript Initialization'
+				 initialOpen={ false }
+				 >
+				<ToggleControl
+					label="Enable Custom JS"
+					help={
+						enableCustomJS
+							? 'Custom initialization enabled.'
+							: 'Using default settings.'
+					}
+					checked={ enableCustomJS }
+					onChange={ (state) => {
+						setAttributes({enableCustomJS: state});
+						// Pre-fill with starter code when enabled
+						if (state && !customJSCode) {
+							setAttributes({
+								customJSCode: `$('.${carouselID}').owlCarousel({\n  loop: true,\n  margin: 10,\n  nav: true,\n  dots: true,\n  autoplay: false,\n  responsive: {\n    0: { items: 1 },\n    600: { items: 2 },\n    1000: { items: 3 }\n  },\n  onInitialized: onInitialized\n});`
+							});
+						}
+					} }
+       			 />
+				 {enableCustomJS && (
+					 <>
+						<p style={{ marginBottom: '10px', fontSize: '12px', color: '#666' }}>
+							Add your custom Owl Carousel initialization below. Use the selector <code>.{carouselID}</code> to target this carousel.
+							<br/><strong>Important:</strong> Include <code>onInitialized: onInitialized</code> callback to show the carousel.
+						</p>
+						<TextareaControl
+							label="Custom Initialization Code"
+							help="Write your owlCarousel() configuration object"
+							value={ customJSCode }
+							onChange={ ( value ) => setAttributes( {customJSCode: value} ) }
+							rows={15}
+							style={{ fontFamily: 'monospace', fontSize: '12px' }}
+						/>
+					</>
+				)}
 				</PanelBody>
 			</Panel>
 		</InspectorControls>

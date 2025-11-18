@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Ekwa owl carousel
  * Description:       A Gutenberg block to show carousel
- * Version:           0.1.3
+ * Version:           0.1.6
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Author:            Sameera
